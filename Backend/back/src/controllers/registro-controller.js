@@ -14,9 +14,9 @@ exports.getById = (req,res) =>{
     const {idRegistro} = req.params;
     res.json(registroService.getById(idRegistro));
 };
-exports.getByBrand = (req,res) =>{
-    const {brand} = req.params;
-    res.json(registroService.getByBrand(brand));
+exports.getByOffice = (req,res) =>{
+    const {office} = req.params;
+    res.json(registroService.getByOffice(office));
 
 };
 exports.getByQuantity = (req,res) =>{

@@ -29,8 +29,8 @@ class RegistroService {
     
     };
   
-  getByBrand(brand) {
-    return this.registros.filter(index => index.cargo==brand);
+  getByOffice(office) {
+    return this.registros.filter(index => index.cargo==office);
   }
 
   put(idRegistro, registro) {
