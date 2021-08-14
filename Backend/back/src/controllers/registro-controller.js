@@ -2,7 +2,7 @@ const Registro = require("../models/registro-model");
 const RegistroService = require("../services/registro-service");
 
 var registroService = new RegistroService();
-//Fazer Tratamentos para req
+
 exports.getAll = (req,res) =>{
     res.json(registroService.getAll());
 };
