@@ -43,7 +43,7 @@ export default {
     return {
       idRegistro: "",
       deletado: false,
-      baseURI: "http://localhost:8080/",
+      baseURI: "http://localhost:8081/PR-TICA05-WEB-Backend/api/registros",
     };
   },
   methods: {

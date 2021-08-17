@@ -127,7 +127,7 @@ export default {
   data() {
     return {
       registros: {},
-      baseURI: "http://localhost:8081/pratica4-backend/api/carros",
+      baseURI: "http://localhost:8081/PR-TICA05-WEB-Backend/api/registros",
     };
   },
   methods: {
