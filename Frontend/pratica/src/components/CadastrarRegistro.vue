@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import api from "@/services/api.js"
 export default {
   name: "CadastrarRegistro",
   data() {
@@ -82,21 +83,23 @@ export default {
       dataEntrada: "",
       registro: {},
       newRegistro: null,
-      baseURI: "http://localhost:8081/pratica4-backend/api/carros",
+      // baseURI: "http://localhost:8081/pratica4-backend/api/carros",
     };
   },
   methods: {
-    postCarro() {
+    async postRegistro() {
       this.registro.nomeF = this.nomeF;
       this.registro.cargo = this.cargo;
       this.registro.dataN = this.dataN;
       this.registro.dataEntrada = this.dataEntrada;
      
+     const response = await api.post('/', this.registro);
+     console.log(response.data)
 
-      this.$http.post(this.baseURI, this.registro).then((result) => {
-        this.newRegistro = result.data;
-        console.log(result.data);
-      });
+      // this.$http.post(this.baseURI, this.registro).then((result) => {
+      //   this.newRegistro = result.data;
+      //   console.log(result.data);
+      // });
     },
   },
 };

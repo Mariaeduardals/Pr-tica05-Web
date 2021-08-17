@@ -42,7 +42,7 @@ export default {
     return {
       idRegistro: "",
       deletado: false,
-      baseURI: "http://localhost:8081/pratica4-backend/api/carros",
+      baseURI: "http://localhost:8080/",
     };
   },
   methods: {
