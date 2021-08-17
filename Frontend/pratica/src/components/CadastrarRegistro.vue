@@ -12,8 +12,9 @@
           placeholder="Informe seu nome"
         />
       </div>
+      <br>
       <div class="form-group">
-        <label for="cargo">Cargo</label>
+        <label for="cargo">Cargo: </label>
         <input
           v-model="cargo"
           type="text"
@@ -22,6 +23,7 @@
           placeholder="Informe seu cargo"
         />
       </div>
+      <br>
       <div class="form-group">
         <label for="dataN">Data de nascimento: </label>
         <input
@@ -32,6 +34,7 @@
           placeholder="Informe a data: dd/mm/aa"
         />
       </div>
+      <br>
       <div class="form-group">
         <label for="dataEntrada">Data entrada na empresa: </label>
         <input
@@ -42,6 +45,7 @@
           placeholder="Informe a data: dd/mm/aa"
         />
       </div>
+      <br>
       <button type="button" @click="postRegistro()" class="btn btn-primary">
         Cadastrar Registro
       </button>

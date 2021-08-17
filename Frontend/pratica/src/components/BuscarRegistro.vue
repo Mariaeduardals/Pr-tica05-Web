@@ -4,7 +4,7 @@
      <div class="centralizar">
     <form style="width: 100%">
       <div class="form-group">
-        <label for="idRegistro">ID do Registro</label>
+        <label for="idRegistro">ID do Registro: </label>
         <input
           v-model="idRegistro"
           type="text"
@@ -13,6 +13,7 @@
           placeholder="Id do registro"
         />
       </div>
+      <br>
       <button type="button" @click="getRegistro()" class="btn btn-primary">
         Buscar Registro
       </button>

@@ -4,7 +4,7 @@
     <div class="centralizar">
       <form style="width: 100%">
            <div class="form-group">
-          <label for="idRegistro">ID do Registro</label>
+          <label for="idRegistro">ID do Registro: </label>
           <input
             v-model="idRegistro"
             type="text"
@@ -13,8 +13,9 @@
             placeholder="Informe o id"
           />
         </div>
+        <br>
         <div class="form-group">
-          <label for="nomeF">Nome do funcionário:</label>
+          <label for="nomeF">Nome do funcionário: </label>
           <input
             v-model="nomeF"
             type="text"
@@ -23,8 +24,9 @@
             placeholder="Informe seu nome"
           />
         </div>
+        <br>
         <div class="form-group">
-          <label for="cargo">Cargo</label>
+          <label for="cargo">Cargo: </label>
           <input
             v-model="cargo"
             type="text"
@@ -33,8 +35,9 @@
             placeholder="Informe seu cargo"
           />
         </div>
+        <br>
         <div class="form-group">
-          <label for="dataN">Data de nascimento:</label>
+          <label for="dataN">Data de nascimento: </label>
           <input
             v-model="dataN"
             type="text"
@@ -43,8 +46,9 @@
             placeholder="Informe a data: dd/mm/aa"
           />
         </div>
+        <br>
         <div class="form-group">
-          <label for="dataEntrada">Data de entrada na empresa:</label>
+          <label for="dataEntrada">Data de entrada na empresa: </label>
           <input
             v-model="dataEntrada"
             type="text"
@@ -53,6 +57,7 @@
             placeholder="Informe a data: dd/mm/aa"
           />
         </div>
+        <br>
         <button type="button" @click="putRegistro()" class="btn btn-primary">
           Atualizar Registro
         </button>
@@ -145,6 +150,7 @@ export default {
 
 <style scoped>
 .atualizar {
+  
   display: flex;
   flex-direction: column;
   align-items: center;

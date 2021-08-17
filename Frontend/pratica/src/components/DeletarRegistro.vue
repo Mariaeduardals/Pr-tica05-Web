@@ -4,7 +4,7 @@
     <div class="centralizar">
       <form style="width: 100%">
         <div class="form-group">
-          <label for="idRegistro">ID do Registro</label>
+          <label for="idRegistro">ID do Registro: </label>
           <input
             v-model="idRegistro"
             type="text"
@@ -13,6 +13,7 @@
             placeholder="Id do Registro"
           />
         </div>
+        <br>
         <button type="button" @click="deleteRegistro()" class="btn btn-danger">
           Deletar Registro
         </button>

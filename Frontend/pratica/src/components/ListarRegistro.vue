@@ -7,6 +7,7 @@
         Listar
       </button>
     </div>
+    <br>
     <div style="width: 90%">
       <div
         style="
@@ -31,7 +32,7 @@
       <div class="centralizar">
         <form style="width: 100%">
           <div class="form-group">
-            <label for="marca">Filtrar por Cargo</label>
+            <label for="marca">Filtrar por Cargo: </label>
             <input
               v-model="cargo"
               type="text"
@@ -47,6 +48,7 @@
               Filtrar
             </button>
           </div>
+          <br>
           <div v-if="registros !== null" style="width: 100%">
             <div
               style="
