@@ -32,7 +32,7 @@
       <div class="centralizar">
         <form style="width: 100%">
           <div class="form-group">
-            <label for="marca">Filtrar por Cargo: </label>
+            <label for="marca">Buscar por Cargo: </label>
             <input
               v-model="cargo"
               type="text"
@@ -42,10 +42,10 @@
             />
             <button
               type="button"
-              @click="filterRegistro()"
+              @click="getCargo()"
               class="btn btn-primary"
             >
-              Filtrar
+              Filtrar por cargo
             </button>
           </div>
           <br>
@@ -77,31 +77,25 @@
         <form style="width: 100%">
           <div class="form-group">
             <div style="margin-left=100px">
-              <label for="quant">Filtrar por Quantidade</label>
+              <label for="quant">Buscar por Quantidade</label>
               <input
-                v-model="quantidade"
+                v-model="qtd"
                 type="text"
                 class="form-control"
-                id="quant"
+                id="qtd"
                 placeholder="Informe uma quantidade"
               />
               <button
                 type="button"
-                @click="filterRegistroByQuantity()"
+                @click="getQtd()"
                 class="btn btn-primary"
               >
-                Filtrar
+                Filtrar Quantidade
               </button>
             </div>
           </div>
           <div v-if="registros !== null" style="width: 100%">
-            <div
-              style="
-                margin-top: 20px;
-                border: solid 1px;
-                border-color: #111;
-                padding-top: 13px;
-              "
+            <div style=" margin-top: 20px; border: solid 1px; border-color: #111; padding-top: 13px;"
               v-for="registro in registros"
               :key="registro.idRegistro"
             >
@@ -128,12 +122,24 @@ export default {
   data() {
     return {
       registros: {},
-      baseURI: "http://localhost:8081/PR-TICA05-WEB-Backend/api/registros",
     };
   },
   methods: {
-    async getRegistros() {
+    // Metódo que chama o endpoint do back end para listar todos funcionários. 
+    async getRegistro() {
       const response = await api.get('/funcionario');
+      console.log(response.data);
+      this.registros = response.data;
+    },
+    // Metódo que chama o endpoint do back end para listar todos funcionários com aquele cargo. 
+    async getCargo() {
+      const response = await api.get(`/cargo/${this.cargo}`);
+      console.log(response.data);
+      this.registros = response.data;
+    },
+    // Metódo que chama o endpoint do back end para listar todos funcionários com a quantidade indicada. 
+    async getQtd() {
+      const response = await api.get(`/quantidade/${this.qtd}`);
       console.log(response.data);
       this.registros = response.data;
     },
