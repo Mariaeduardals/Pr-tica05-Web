@@ -1,14 +1,16 @@
-import { Router } from 'express';
-import {Post, GetAll, GetById, GetByoffice, GetByQtd, Update, Delete} from '../controllers/employee_controller.js';
+const express = require('express');
+const {Router} = express;
+const controller = require('../controller/employee_controller');
+const {Post, GetAll, GetById, GetByoffice, GetByQtd, Update, Delete} = controller;
 
 const routes = Router();
 
-routes.post("/", Post);
-routes.get("/", GetAll);
+routes.post("/funcionario", Post);
+routes.get("/funcionario", GetAll);
 routes.get("/:id", GetById);
 routes.get("/cargo/:cargo", GetByoffice);
 routes.get("/quantidade/:qtd", GetByQtd);
 routes.put("/:id", Update);
 routes.delete("/:id", Delete)
 
-export default routes;
+module.exports =  routes;

@@ -1,11 +1,17 @@
-import pg from "pg";
+const pg =  require('pg');
 
-const client = new pg.Pool({
+const db = new pg.Pool({
     user: "postgres",
-    password: "1234" ,
+    password: "postgres" ,
     host: "localhost",
-    database: "registro",
+    database: "empresa",
     port: 5432,
 })
 
-export default client;
+db.on('connect',() =>{
+    console.log('conectado com sucesso!');
+});
+
+module.exports = {
+    query: (text, params) => db.query(text, params),
+}
